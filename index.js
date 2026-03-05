@@ -1,5 +1,6 @@
 // api email: americanameer72@gmail.com
 // apikey: a01d0c4e
+const API_KEY = "a01d0c4e"
 const autocompleteConfig ={
     renderOption(movie){
         const imgSrc = movie.Poster === 'N/A' ? '' : movie.Poster
@@ -15,7 +16,7 @@ const autocompleteConfig ={
     async fetchData(searchTerm){
     const response = await axios.get('http://www.omdbapi.com/', {
         params: {
-            apikey: 'a01d0c4e',
+            apikey: API_KEY,
             s: searchTerm
         }
     })
@@ -50,7 +51,7 @@ let rightMovie
 const onMovieSelect = async (movie, summaryElement, side) => {
     const response = await await axios.get('http://www.omdbapi.com/', {
         params: {
-            apikey: 'a01d0c4e',
+            apikey: API_KEY,
             i: movie.imdbID
         }
     })
